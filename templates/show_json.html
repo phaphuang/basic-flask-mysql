@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<pre id="json"></pre>
+<div class="row">
+        <button type="button" onclick="javascript:history.back()" class="btn btn-info">Back!</button>
+</div>
+
+<script type="text/javascript">
+var data = {{ data | safe }}
+
+document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
+</script>
+{% endblock %}

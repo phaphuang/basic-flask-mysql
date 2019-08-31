@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-4">
+        <center>
+            <input type="button" class="btn btn-primary" value="Deposit" onclick="relocate_deposit()">
+        </center>
+    </div>
+    <div class="col-4">
+        <center>
+            <input type="button" class="btn btn-info" value="Withdraw" onclick="relocate_withdraw()">
+        </center>
+    </div>
+    <div class="col-4">
+        <center>
+            <button type="button" onclick="javascript:history.back()" class="btn btn-info">Back!</button>
+        </center>
+    </div>
+</div>
+<br>
+<div class="row align-items-center justify-content-center">
+    
+</div>
+
+<script>
+function relocate_deposit()
+{
+    location.href = "/makeDeposit"
+}
+function relocate_withdraw()
+{
+    location.href = "/makeWithdraw"
+}
+</script>
+{% endblock %}

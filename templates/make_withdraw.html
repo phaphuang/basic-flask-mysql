@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1><font color="blue">Please input your withdraw amount</font></h1>
+<form>
+    <div class="form-group">
+        <label for="uid">ID:</label>
+        <input type="number" name="uid" id="uid" placeholder="Input ID" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" placeholder="Input amount to withdraw" class="form-control" required>
+    </div>
+    <div id="output"></div>
+    <div class="form-group">
+        <input type="submit" id="withdraw" value="Withdraw" class="btn btn-success">
+        <input type="reset" value="Reset" class="btn btn-secondary">
+        <button type="button" onclick="javascript:history.back()" class="btn btn-info">Back!</button>
+    </div>
+</form>
+
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('form').on('submit', function(event) {
+        $.ajax({
+            data : {
+                uid: $('#uid').val(),
+                amount: $('#amount').val(),
+            },
+            type: 'POST',
+            url: '/withdraw'
+            })
+        .done(function(data) {
+            //$('#output').text(data.output).show();
+            alert("Data was updated with total amount: " + data.output)
+            location.href="/"
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Invalid Input!!");
+        });
+        
+    event.preventDefault();    
+    });
+});
+</script>
+{% endblock %}

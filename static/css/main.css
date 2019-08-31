@@ -1,0 +1,17 @@
+body {
+    padding-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.top-pad {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.navbar {
+    margin-bottom: 40px !important;
+}
+
+.row {
+    padding-left: 10px;
+    padding-right: 10px;
+}

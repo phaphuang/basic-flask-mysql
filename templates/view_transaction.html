@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <h1><font color="blue">Transaction details</font></h1>
+</div>
+<div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="myInput">
+</div>
+<br>
+<div class="row justify-content-center">
+    <div class="table-responsive">
+        <table class="table table-dark table-hover" id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Before Update</th>
+                    <th>Input Amount</th>
+                    <th>Action</th>
+                    <th>After Update</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    {% for d in row %}
+                    <td>{{ d }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+        <button type="button" onclick="javascript:history.back()" class="btn btn-info">Back!</button>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="row"><object width="1200" data="{{ url_for('static', filename='uploads/out.txt') }}"></object></div>
+<!-- src: https://stackoverflow.com/questions/11620698/how-to-trigger-a-file-download-when-clicking-an-html-button-or-javascript -->
+<a class="btn btn-success" role="button" href="{{ url_for('static', filename='uploads/out.txt') }}" download="out.txt">Download Text File</a>
+<button type="button" onclick="javascript:history.back()" class="btn btn-info">Back!</button>
+{% endblock %}

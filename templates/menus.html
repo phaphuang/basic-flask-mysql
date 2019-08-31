@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <h1><font color="black">Database operations with Python-Flask and Mysql</font></h1>
+</div>
+<div class="card text-white">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div class="row justify-content-center">
+                <h3><a href="/createForm">Insert new User into Table</a></h3>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row justify-content-center">
+                <h3><a href="/listForm">Show User Data</a></h3>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row justify-content-center">
+                <h3><a href="/makeTransaction">Make Transaction</a></h3>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row justify-content-center">
+                <h3><a href="/viewTransactions">View Transactions</a></h3>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row justify-content-center">
+                <h3><a href="/listJson">Show JSON form</a></h3>
+            </div>
+        </li>
+        <li class="lsit-group-item">
+            <div class="row justify-content-center">
+                <h3><a href="/listText">Read from text file</a></h3>
+            </div>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}

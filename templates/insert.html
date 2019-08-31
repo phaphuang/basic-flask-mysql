@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1><font color="blue">Please enter your information</font></h1>
+<form action="/insert" method="POST">
+    <div class="form-group">
+        <label for="t_name">First Name:</label>
+        <input type="text" name="t_name" id="t_name" placeholder="Input first name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="l_name">Last Name:</label>
+        <input type="text" name="t_lname" id="l_name" placeholder="Input last name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="balance">Balance:</label>
+        <input type="number" name="t_balance" id="balance" placeholder="Input amount" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Insert" class="btn btn-success">
+        <input type="reset" value="Reset" class="btn btn-secondary">
+        <button type="button" onclick="javascript:history.back()" class="btn btn-info">Back!</button>
+    </div>
+</form>
+{% endblock %}

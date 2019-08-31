@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2><font color="red">Update Your Details</font></h2>
+<form action="/update_det" method="POST">
+    {% for row in data %}
+    <div class="form-group">
+        <h5><label for="uid">ID:</label></h5>
+        <input type="hidden" id="uid" value="{{row[0]}}" name="uid" class="form-control">{{row[0]}}
+    </div>
+    <div class="form-group">
+        <h5><label for="fname">First Name:</label></h5>
+        <input type="text" value="{{row[1]}}" name="fname" class="form-control">
+    </div>
+    <div class="form-group">
+        <h5><label for="lname">Last Name:</label></h5>
+        <input type="text" value="{{row[2]}}" name="lname" class="form-control">
+    </div>
+    <div class="form-group">
+        <h5><label for="balance">Balance:</label></h5>
+        <input type="number" value="{{row[3]}}" name="balance" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" name="Update" value="Update" class="btn btn-warning">
+        <input type="reset" name="reset" value="Clear" class="btn btn-secondary">
+        <button type="button" onclick="javascript:history.back()" class="btn btn-info">Back!</button>
+    </div>
+    {% endfor %}
+</form>
+{% endblock %}
